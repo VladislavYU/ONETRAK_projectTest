@@ -60,7 +60,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONETRAK_TEST/AppDelegate.swift"
-            timestampString = "570714375.108879"
+            timestampString = "570882328.2045749"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -76,11 +76,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONETRAK_TEST/Classes/Modules/Metric/MetricViewController.swift"
-            timestampString = "570714375.109035"
+            timestampString = "570882328.204748"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -92,7 +92,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONETRAK_TEST/AppDelegate.swift"
-            timestampString = "570714375.109143"
+            timestampString = "570882328.205716"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -108,11 +108,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONETRAK_TEST/Classes/Modules/Metric/MetricPresenter.swift"
-            timestampString = "570714375.109225"
+            timestampString = "570882328.205844"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
             landmarkName = "load()"
             landmarkType = "7">
             <Locations>
@@ -156,11 +156,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONETRAK_TEST/Classes/Modules/Metric/MetricPresenter.swift"
-            timestampString = "570714375.109334"
+            timestampString = "570882328.20596"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "load()"
             landmarkType = "7">
          </BreakpointContent>
@@ -172,11 +172,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONETRAK_TEST/Classes/Modules/Metric/MetricPresenter.swift"
-            timestampString = "570714375.109542"
+            timestampString = "570882328.206062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "load()"
             landmarkType = "7">
             <Locations>
@@ -220,7 +220,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONETRAK_TEST/Classes/Modules/Metric/MetricPresenter.swift"
-            timestampString = "570714375.109666"
+            timestampString = "570882328.2061599"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
@@ -236,12 +236,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONETRAK_TEST/Classes/Modules/Metric/MetricViewController.swift"
-            timestampString = "570714375.1097651"
+            timestampString = "570882328.2062711"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "add()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -252,13 +252,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONETRAK_TEST/Classes/Modules/Metric/MetricViewController.swift"
-            timestampString = "570714375.1098731"
+            timestampString = "570882328.207076"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "add()"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "set(items:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONETRAK_TEST/Classes/Modules/Metric/MetricViewController.swift"
+            timestampString = "570882328.207563"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "setSteps(steps:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONETRAK_TEST/Classes/Modules/Metric/MetricPresenter.swift"
+            timestampString = "570882328.208128"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "MetricPresenter"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

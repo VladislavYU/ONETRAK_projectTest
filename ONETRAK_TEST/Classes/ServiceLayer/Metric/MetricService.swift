@@ -1,7 +1,7 @@
 import Foundation
 
 protocol MetricService {
-    func fetchMetric(complatition: @escaping ([MetricModel]) -> ())
+    func fetchMetric(complatition: @escaping ([MetricModel]?, Error?) -> ())
 }
 
 class MetricServiceImp: MetricService {
@@ -13,10 +13,16 @@ class MetricServiceImp: MetricService {
     init() {
     }
     
-    func fetchMetric(complatition: @escaping ([MetricModel]) -> ()) {
-        request.request(url: URL(string: url)!, method: .GET, params: nil, headers: nil) { (data) in
-            let result = self.parser.mapObject([MetricModel].self, data: data)
-            complatition(result)
+    func fetchMetric(complatition: @escaping ([MetricModel]?, Error?) -> ()) {
+        request.request(url: URL(string: url)!, method: .GET, params: nil, headers: nil) { data, error  in
+            guard error == nil else {
+                complatition(nil, error!)
+                return
+            }
+            
+            
+            let result = self.parser.mapObject([MetricModel].self, data: data!)
+            complatition(result, nil)
         }
     }
     

@@ -20,17 +20,18 @@ class NetworkService {
                  method: Method,
                  params: [String : AnyObject]?,
                  headers: [String: AnyObject]?,
-                 completetion: @escaping (Data) -> ()) {
+                 completetion: @escaping (Data?, Error?) -> ()) {
         let request = self.createRequest(url: url, method: method, params: params, headers: headers)
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard error == nil else {
                 print("Error Request: \(error!)")
+                completetion(nil, error!)
                 return
             }
             
             if let data = data {
-                completetion(data)
+                completetion(data, nil)
             }
         }.resume()
     }

@@ -13,6 +13,7 @@ class MetricPresenter: MetricEventHandler {
     }
     
     func load() {
+        self.view?.startLoader()
         self.getMetric { (models) in
             DispatchQueue.main.async {
                 self.view?.set(items: models)                
@@ -25,8 +26,13 @@ class MetricPresenter: MetricEventHandler {
     }
     
     private func getMetric(complatition: @escaping ([MetricModel]) -> ()) {
-        metricService.fetchMetric { (models) in
+        metricService.fetchMetric { [weak self] (models, error)  in
+            guard let models = models else {
+                self?.view?.stopLoader()
+                return
+            }
             complatition(models)
+            self?.view?.stopLoader()
         }
     }
     

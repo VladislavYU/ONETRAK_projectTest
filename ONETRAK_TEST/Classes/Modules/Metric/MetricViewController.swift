@@ -13,6 +13,7 @@ private let reuseIdentifier = "MetricCollectionViewCell"
 class MetricViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     var items: [MetricModel] = []
     var presenter: MetricEventHandler?
@@ -29,24 +30,24 @@ class MetricViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupNavigationController()
-        self.presenter?.load()
-        
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
-
-        self.collectionView.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.presenter?.load()
+        self.setup()
     }
     
     private func setupNavigationController() {
         self.navigationItem.title = "Steps"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(edit))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "goal"), style: .plain, target: self, action: #selector(edit))
+    }
+    
+    private func setup() {
+        self.setupNavigationController()
+        self.presenter?.load()
+        
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        self.collectionView.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+        
+        self.activityIndicator.color = .lightGray
     }
     
     @objc private func edit() {
@@ -86,7 +87,6 @@ class MetricViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         cell.setSteps(count: self.minSteps)
         cell.config(model: self.items[indexPath.row])
-        // Configure the cell
         
         return cell
     }
@@ -110,22 +110,34 @@ extension MetricViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: self.view.frame.width, height: self.view.frame.height * 0.2)
+        return CGSize(width: self.view.frame.width, height: 40)
     }
 }
 
 extension MetricViewController: MetricViewBehavior {
+    func startLoader() {
+        self.activityIndicator.startAnimating()
+    }
+    
+    func stopLoader() {
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()            
+        }
+    }
+    
     func setSteps(steps: Int) {
         self.minSteps = steps
-        UIView.animate(withDuration: 2) {
+        UIView.transition(with: self.collectionView, duration: 1, options: .transitionFlipFromTop, animations: {
             self.collectionView.reloadData()
-        }
+        }, completion: nil)
     }
     
     
     func set(items: [MetricModel]) {
         self.items = items
-        self.collectionView.reloadData()
+        UIView.transition(with: self.collectionView, duration: 1, options: .transitionFlipFromBottom, animations: {
+            self.collectionView.reloadData()
+        }, completion: nil)
     }
     
     

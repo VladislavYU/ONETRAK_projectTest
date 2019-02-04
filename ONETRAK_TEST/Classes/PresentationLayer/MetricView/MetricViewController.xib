@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MetricViewController" customModule="ONETRAK_TEST" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="pcq-e6-FVp" id="CDY-pQ-AMP"/>
                 <outlet property="collectionView" destination="MFa-Oa-EtO" id="xyk-V8-02g"/>
                 <outlet property="view" destination="iN0-l3-epB" id="R6Z-jx-dP3"/>
             </connections>
@@ -31,13 +32,18 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" semanticContentAttribute="playback" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pcq-e6-FVp">
+                    <rect key="frame" x="169" y="325" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="pcq-e6-FVp" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="2i8-si-6sW"/>
                 <constraint firstItem="MFa-Oa-EtO" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Hs3-Yq-xFj"/>
                 <constraint firstItem="MFa-Oa-EtO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="IYM-GK-Se9"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MFa-Oa-EtO" secondAttribute="trailing" id="dZD-9w-n9P"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="MFa-Oa-EtO" secondAttribute="bottom" id="oMR-IX-R8A"/>
+                <constraint firstItem="pcq-e6-FVp" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="vE3-fG-6xh"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>

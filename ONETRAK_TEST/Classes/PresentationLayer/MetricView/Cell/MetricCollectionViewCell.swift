@@ -27,7 +27,7 @@ class MetricCollectionViewCell: UICollectionViewCell {
     }
     
     func config(model: MetricModel){
-        
+        self.metric = model
         let formatter = DateFormatter()
         formatter.dateFormat = "MM.dd.yyyy"
         
